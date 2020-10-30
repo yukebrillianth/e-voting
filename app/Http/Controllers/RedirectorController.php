@@ -15,9 +15,9 @@ class RedirectorController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'super admin') {
-            return redirect()->route('/dashboard');
+            return redirect()->route('dashboard');
         } elseif (Auth::user()->role == 'pengawas') {
-            return redirect()->route('/dashboard');
+            return redirect()->route('dashboard');
         } else {
             return redirect()->route('formulir');
         }

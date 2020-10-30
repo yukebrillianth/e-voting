@@ -22,6 +22,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [RedirectorController::class, 'index'])->middleware('auth');
+Route::get('/', [RedirectorController::class, 'index'])->name('/')->middleware('auth');
 Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('formulir', [FormController::class, 'index'])->name('formulir')->middleware('auth');

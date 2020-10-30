@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
@@ -13,6 +14,10 @@ class FormController extends Controller
 
     public function index()
     {
-        echo "halo";
+        if (Auth::user()->role == 'peserta') {
+            echo "halo";
+        } else {
+            return redirect()->route('/');
+        }
     }
 }
